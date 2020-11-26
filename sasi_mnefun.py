@@ -2,12 +2,10 @@
 
 """
 Created on Fri May 6 7:11:32 2016
-
 @author: mdclarke
-
 mnefun script for SASI analysis
-
 """
+
 import mnefun
 import numpy as np
 from score import score
@@ -30,7 +28,7 @@ params = mnefun.Params(tmin=-0.1, tmax=1.2, n_jobs=18,
                        decim=2, proj_sfreq=200, n_jobs_fir='cuda',
                        filter_length='5s', lp_cut=80., n_jobs_resample='cuda',
                        bmin=-0.1, bem_type='5120', ecg_channel='MEG1531')
-#
+
 params.subjects = ['sasi_110', 'sasi_114', 'sasi_117', 'sasi_118',
                    'sasi_120', 'sasi_121', 'sasi_129', 'sasi_130', 
                    'sasi_131', 'sasi_133', 'sasi_134', 'sasi_135', 
@@ -100,7 +98,7 @@ params.must_match = [
     [2, 3]
     ]
 ttimes = [0.1, 0.2, 0.4, 0.5, 0.7, 1.0]
-params.report_params.update(  # add a couple of nice diagnostic plots
+params.report_params.update(
     bem=False,  # Using a surrogate
     whitening=[
         dict(analysis='English', name='EngGram',
