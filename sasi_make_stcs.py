@@ -26,6 +26,7 @@ subj = ['sasi_110', 'sasi_114', 'sasi_117', 'sasi_118',
         'sasi_131', 'sasi_133', 'sasi_134', 'sasi_135',
         'sasi_137', 'sasi_141', 'sasi_143', 'sasi_144', 
         'sasi_145', 'sasi_147']
+
 data_path = '/storage/Maggie/sasi'
 anat_path = '/storage/Maggie/anat/subjects'
 conditions = ['EngGram', 'EngUngram', 'JabGram', 'JabUngram']
@@ -36,8 +37,7 @@ lambda2 = 1. / snr ** 2
 source = mne.read_source_spaces(op.join(anat_path, 'BBC_249', 'bem',
                                         'BBC_249-oct-6-src.fif'))
 source_verts = [source[0]['vertno'], source[1]['vertno']]
-#source_verts = [np.arange(10242), np.arange(10242)]
-################ HERE WE GO ###################################################
+
 for si, s in enumerate(subj):    
     fwd = mne.read_forward_solution(op.join(data_path, '%s' % s, 'forward',
                                     '%s-sss-fwd.fif' % s))
