@@ -7,13 +7,10 @@ Run conjunction and partial conjunction analyses
 
 """
 from __future__ import print_function
-
 import os
 import os.path as op
 import time
-
 import numpy as np
-
 import mne
 from mnefun import discretize_cmap
 from mnefun.stats import (hotelling_t2, hotelling_t2_baseline,
